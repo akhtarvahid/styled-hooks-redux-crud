@@ -1,8 +1,8 @@
 # styled-react-redux-crud
 
 
-# Used followings:
+Used followings:
 
- #React #Redux #Redux-saga #Sass #Unit-testing #Responsive
+- #React #Redux #Redux-saga #Sass #Unit-testing #Responsive
 
- #React-bootstrap #Modal #Multiple checkbox
+- #React-bootstrap #Modal #Multiple checkbox

@@ -1,0 +1,179 @@
+$lightblue: #5096ff;
+$white: #fff;
+$red: #ff0000;
+$green: #1cc727;
+$coral: #ff7f50;
+$total-items: 100;
+$light-blue: #5096ff66;
+// Set delay per List Item
+@for $i from 1 through $total-items {
+    tr:nth-child(#{$i}) {
+      animation-delay: 10s * $i;
+    }
+  }
+  // Keyframe animation
+  @keyframes fadeIn {
+    0% {
+      opacity: 0;
+      top: 100px;
+    }
+    50% {
+      opacity: 0.3;
+      top: 50px;
+    }
+    75%{
+        opacity: 0.6;
+        top: 0;
+    }
+    100% {
+      opacity: 1;
+    }
+  }
+  
+
+@mixin childs($position) {
+    &:nth-child(#{$position}){
+        @content;
+    }
+}
+
+@mixin phone($size) {
+    @media only screen and (max-width: $size) {
+      @content;
+   }
+  }
+
+.table{
+    box-shadow: 1px -2px 20px 0px #f8f9fa;
+    input[type="checkbox"]{
+        transform: scale(1.3);
+    }
+    margin-bottom: 0;
+    td{
+        border-top: 1px solid $lightblue;
+        font-family: monospace;
+        color: $lightblue;
+    }
+    .checkbox{
+        position: relative;
+        .delete {
+            position: absolute;
+            left: 30px;
+        }
+    }
+    .check-all{
+        position: absolute;
+        top: 13px;
+        left: 72px;
+        border-radius: 5px;
+        width: 70px;
+        .delete {
+            left: 45px;
+            top: 2px;
+        }
+        span{
+            margin: 0px 5px;
+        }
+        &.action-border{
+            border: 1px solid $lightblue;
+            background: $white;        
+        }
+    }
+    thead{
+    tr{
+        color: $lightblue;
+        th{
+            position: relative;
+            border-bottom: 2px solid $lightblue;
+            @include childs(1){
+                text-align: center;
+            }
+            .form-inline {
+                position: relative;
+            }
+            @media only screen and (max-width: 480px) {
+                .form-inline {
+                display: flex;
+                align-items: center;
+                flex-flow: row nowrap;
+                }
+            }
+        
+        }
+    }
+    }
+    tbody{
+        tr{
+            &:hover {
+                background-color: $lightblue;
+                td{
+                    color: $white;
+                }
+            }
+            td {
+                &:nth-child(1){
+                    text-align: center;
+                }
+            }
+            animation: fadeIn 0.7s linear;
+            animation-fill-mode: both;
+
+           // tooltip
+           .tooltip-text {
+               position: absolute;
+            svg{
+               margin-left: 10px;
+            }
+           }
+        }
+        .selected{
+            box-shadow: #dee2e6 4px 3px 11px 0px;
+            text-decoration: line-through;
+            text-decoration-color: $coral;
+            td{
+                color: $red;
+            }
+        }
+    }
+    .delete{
+        opacity: 0.4;
+        color: $red;
+        font-size: 20px;
+        cursor: pointer;
+        position: absolute;
+        left: 52px;
+        &:hover{
+         opacity: 1;
+        }
+       }
+    &_edit {
+        div{
+            display: flex;
+            align-items: center;
+            position: relative;
+        }
+        svg{
+         font-size: 20px;
+         @include childs(1){
+            color: $green;
+            cursor: copy;
+            margin-right: 10px;
+         }
+      }
+    }
+    &_no-content{
+        color: $coral;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 25px;
+    }
+    @include phone(480px){
+        .action{
+            display: none;
+        }
+        .check-all{
+            left: 12px;
+        }
+      };
+}

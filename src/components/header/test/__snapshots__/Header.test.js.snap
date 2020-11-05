@@ -1,0 +1,29 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`should render Header Component 1`] = `
+<div
+  className="menu-header"
+>
+  <div
+    className="menu-header__menu-inner"
+  >
+    <div>
+      <img
+        alt="logo"
+        className="d-inline-block align-top"
+        height="50"
+        src="logo.gif"
+        width="80"
+      />
+      <div>
+        REACT CRUD
+      </div>
+    </div>
+    <button
+      onClick={[Function]}
+    >
+      Add
+    </button>
+  </div>
+</div>
+`;

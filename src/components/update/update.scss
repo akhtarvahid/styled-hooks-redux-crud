@@ -1,0 +1,24 @@
+$success: #28a745c4;
+$danger: #ea6975;
+$lightblue: #368eda;
+$white: #fff;
+
+.modal-content{
+    &_update{
+        background: $success;
+        color: white;
+    }
+    .btn-success {
+        background-color: $success;
+        border-color: #28a745c4;
+    }
+    .btn-danger {
+        background-color: $danger;
+        border-color: $danger;
+    }
+    .close{
+        color: $white;
+        font-size: 30px;
+        outline-width: 0;
+    }
+}

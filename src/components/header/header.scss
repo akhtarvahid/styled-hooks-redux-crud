@@ -1,0 +1,79 @@
+$white: #fff;
+$blue: #5096ff;
+$coral: #ff7f50;
+
+@mixin first-child() {
+  &:first-of-type {
+    @content
+  }
+}
+@mixin moveAnimation() {
+  @keyframes mymove {
+  from {
+    border-right: 29px solid transparent;
+    border-left: 28px solid transparent; 
+    border-top: 1px solid $white;
+  }
+  to {
+    border-right: 29px solid transparent;
+    border-left: 28px solid transparent;
+    border-top: 28px solid $white;
+  }
+ }
+}
+@mixin phone($size) {
+  @media only screen and (max-width: $size) {
+    @content;
+ }
+}
+/* heading css */
+.menu-header{
+    background: $blue;
+    color: $white;
+    &__menu-inner{
+      width: 70%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin: 0 auto;
+        div{
+        @include first-child(){
+        display: flex;
+        align-items: center;
+        font-weight: 600;
+        img{
+          margin-right: 10px;
+        }
+      }
+    }
+      
+      button{
+        border: none;
+        background: $coral;
+        border-radius: 1px;
+        position: relative;
+        color: $white;
+        font-family: sans-serif;
+        padding: 3px 12px;
+        font-weight: 600;
+        outline-width: 0;
+        border: 1px solid $white;
+        @include moveAnimation();
+        
+        &::after {
+          content: '';
+          top: 30px;
+          left: 0px;
+          position: absolute;
+          border-right: 28px solid transparent;
+          border-left: 28px solid transparent;
+          border-top: 28px $white;
+          animation: mymove 3s infinite;
+        }
+      }
+      
+      @include phone(480px){
+        width: 100%;
+      };
+    }
+  }

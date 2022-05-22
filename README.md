@@ -1,8 +1,19 @@
-# styled-react-redux-crud
+# React CRUD application 
+## styled-react-redux-crud
+
+### There are many things covered in this application.
+
+ Create, update, delete functionality along with how to handle multiple checkboxes.
 
 
-Used followings:
+Used:
 
-- #React #Redux #Redux-saga #Sass #Unit-testing #Responsive
-
-- #React-bootstrap #Modal #Multiple checkbox
+- React 
+- Redux 
+- Redux-saga 
+- Sass 
+- Unit-testing 
+- Responsive
+- React-bootstrap 
+- Modal 
+- Multiple checkbox

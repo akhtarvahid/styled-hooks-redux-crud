@@ -31,6 +31,9 @@ function ListItem({ lists, onHandleEdit, onDelete, onChecked,
       </>
     )
   }
+
+  const isCheckedMoreThanOne = lists.filter(list => list.completed)?.length <= 1;
+
   return (
     <>
       <Table responsive className="table"
@@ -61,7 +64,7 @@ function ListItem({ lists, onHandleEdit, onDelete, onChecked,
                 <td className="remove">{list.description.length > 20 ? list.description.substring(0, 20).trim() + '...' : list.description}</td>
                 <td className="table_edit">
                   <div>
-                    <FaEdit onClick={() => onHandleEdit(list)} />
+                    {isCheckedMoreThanOne && <FaEdit onClick={() => onHandleEdit(list)} />}
                     <input key={list.id} onChange={onChecked} type="checkbox" checked={list.completed} value={list.title} />
                     {list.completed && <MdDelete className="delete" onClick={() => onDelete(list)} alt="delete"/>}
                   </div>

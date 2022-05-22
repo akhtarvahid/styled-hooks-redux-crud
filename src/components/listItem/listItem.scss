@@ -64,12 +64,15 @@ $light-blue: #5096ff66;
     .check-all{
         position: absolute;
         top: 13px;
-        left: 72px;
+        left: 85px;
         border-radius: 5px;
-        width: 70px;
+        width: 80px;
+        input[type="checkbox"] {
+            margin-left: 3px;
+        }
         .delete {
-            left: 45px;
-            top: 2px;
+            left: 55px;
+            top: 5px;
         }
         span{
             margin: 0px 5px;
